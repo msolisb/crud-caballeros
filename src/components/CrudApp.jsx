@@ -6,28 +6,28 @@ const initialDb = [
   {
     id: 1,
     name: 'Seiya',
-    constellation: 'Pegaso'
+    constellation: 'Pegaso',
   },
   {
     id: 2,
     name: 'Shiryu',
-    constellation: 'Dragón'
+    constellation: 'Dragón',
   },
   {
     id: 3,
     name: 'Hyoga',
-    constellation: 'Cisne'
+    constellation: 'Cisne',
   },
   {
     id: 4,
     name: 'Shun',
-    constellation: 'Andrómeda'
+    constellation: 'Andrómeda',
   },
   {
     id: 5,
     name: 'Ikki',
-    constellation: 'Fénix'
-  }
+    constellation: 'Fénix',
+  },
 ]
 
 const CrudApp = () => {
@@ -73,18 +73,19 @@ const CrudApp = () => {
   return (
     <>
       <h2>Crud App</h2>
-      <CrudForm
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      <CrudTable
-        db={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      />
-      <table></table>
+      <article className='grid-1-2'>
+        <CrudForm
+          createData={createData}
+          updateData={updateData}
+          dataToEdit={dataToEdit}
+          setDataToEdit={setDataToEdit}
+        />
+        <CrudTable
+          db={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        />
+      </article>
     </>
   )
 }

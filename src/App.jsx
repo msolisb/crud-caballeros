@@ -6,6 +6,7 @@ function App() {
     <>
       <h1>Ejercios REACT</h1>
       <CrudApp />
+      <hr />
     </>
   )
 }

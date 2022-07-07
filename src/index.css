@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f6f6f6;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form {
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  margin-bottom: 3rem;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem 1rem 0.5rem;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.submit,
+.reset {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.submit {
+  background-color: #50c564;
+}
+
+.submit:hover {
+  background-color: #49b95c;
+}
+
+.reset:active {
+  transform: scale(0.99);
+}
+
+.reset {
+  background-color: #f31f1f;
+}
+
+.reset:hover {
+  background-color: #d81d1d;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #dedede;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.edit,
+.delete {
+  border: none;
+  padding: 0.8rem 2rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: #316ae5;
+}
+
+.delete {
+  background-color: #f31f1f;
+}
+
+hr {
+  margin: 3rem auto;
+  border: 2px solid gray;
+}
+
+@media screen and (min-width: 990px) {
+  .grid-1-2 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+  }
+}

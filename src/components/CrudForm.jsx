@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const initialForm = {
   name: '',
   constellation: '',
-  id: null
+  id: null,
 }
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -18,7 +18,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     })
   }
 
@@ -49,23 +49,35 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <div>
       <h3>{form.id ? 'Editando' : 'Agregar'}</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
+        <div>
+          <label htmlFor='name'>Nombre Caballero</label>
+          <input
+            type='text'
+            id='name'
+            name='name'
+            placeholder='Ingrese el nombre'
+            value={form.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor='constellation'>Constelación</label>
+          <input
+            type='text'
+            name='constellation'
+            placeholder='Ingrese la Constelacion'
+            value={form.constellation}
+            onChange={handleChange}
+          />
+        </div>
+        <input type='submit' value='Agregar' className='submit' />
         <input
-          type="text"
-          name="name"
-          placeholder="Ingrese el nombre"
-          value={form.name}
-          onChange={handleChange}
+          type='reset'
+          value='Limpiar'
+          onClick={handleReset}
+          className='reset'
         />
-        <input
-          type="text"
-          name="constellation"
-          placeholder="Ingrese la Constelacion"
-          value={form.constellation}
-          onChange={handleChange}
-        />
-        <input type="submit" value="Agregar" />
-        <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>
     </div>
   )

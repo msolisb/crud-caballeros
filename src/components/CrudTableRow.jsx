@@ -8,9 +8,13 @@ const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
       <tr>
         <td>{name}</td>
         <td>{constellation}</td>
-        <td>
-          <button onClick={() => setDataToEdit(el)}>Editar</button>
-          <button onClick={() => deleteData(id)}>Eliminar</button>
+        <td className='flex'>
+          <button className='edit' onClick={() => setDataToEdit(el)}>
+            Editar
+          </button>
+          <button className='delete' onClick={() => deleteData(id)}>
+            Eliminar
+          </button>
         </td>
       </tr>
     </>
