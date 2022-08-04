@@ -32,19 +32,15 @@ const initialDb = [
 
 const CrudApp = () => {
   //
-  const [db, setDb] = useState(initialDb)
+  const [db, setDb] = useState(
+    localStorage.getItem('db')
+      ? JSON.parse(localStorage.getItem('db'))
+      : initialDb
+  )
   const [dataToEdit, setDataToEdit] = useState(null)
 
   useEffect(() => {
-    const obtenerLS = () => {
-      const caballerosLS =
-        JSON.parse(localStorage.getItem(caballeros)) ?? initialDb
-      setDb(caballerosLS)
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('caballeros', JSON.stringify(db))
+    localStorage.setItem('db', JSON.stringify(db) || initialDb)
   }, [db])
 
   const createData = (data) => {

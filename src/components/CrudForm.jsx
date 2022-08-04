@@ -71,7 +71,11 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
             onChange={handleChange}
           />
         </div>
-        <input type='submit' value='Agregar' className='submit' />
+        <input
+          type='submit'
+          value={form.id === null ? 'Agregar' : 'Guardar Cambios'}
+          className='submit'
+        />
         <input
           type='reset'
           value='Limpiar'
